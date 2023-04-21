@@ -22,6 +22,8 @@
 
 #pragma once
 
+#include "disable-copy-move.hpp"
+
 #include <string>
 #include <sstream>
 #include <iomanip>
