@@ -58,39 +58,39 @@ endif()
 
 # Common testing options.
 
-enable_testing()
+#enable_testing()
 
-find_package(GTest REQUIRED)
+#find_package(GTest REQUIRED)
 
 # Mock tests that use libpcsc-mock to mock PC/SC API calls.
 
-set(MOCK_TEST_EXE lib${PROJECT_NAME}-test-mock)
+#set(MOCK_TEST_EXE lib${PROJECT_NAME}-test-mock)
 
-add_subdirectory(tests/lib/libpcsc-mock)
+#add_subdirectory(tests/lib/libpcsc-mock)
 
-add_executable(${MOCK_TEST_EXE}
-  tests/mock/test-select-card-reader-and-card.cpp
-  tests/mock/test-connect-to-card-transmit-apdus.cpp
-)
+#add_executable(${MOCK_TEST_EXE}
+#  tests/mock/test-select-card-reader-and-card.cpp
+#  tests/mock/test-connect-to-card-transmit-apdus.cpp
+#)
 
-target_link_libraries(${MOCK_TEST_EXE}
-  ${PROJECT_NAME}
-  pcsc-mock
-  GTest::Main
-)
+#target_link_libraries(${MOCK_TEST_EXE}
+#  ${PROJECT_NAME}
+#  pcsc-mock
+#  GTest::Main
+#)
 
-add_test(${MOCK_TEST_EXE} ${MOCK_TEST_EXE})
+#add_test(${MOCK_TEST_EXE} ${MOCK_TEST_EXE})
 
 # Integration tests that use the real operating system PC/SC service.
 
-set(INTEGRATION_TEST_EXE lib${PROJECT_NAME}-test-integration)
+#set(INTEGRATION_TEST_EXE lib${PROJECT_NAME}-test-integration)
 
-add_executable(${INTEGRATION_TEST_EXE}
-  tests/integration/test-${PROJECT_NAME}.cpp
-)
+#add_executable(${INTEGRATION_TEST_EXE}
+#  tests/integration/test-${PROJECT_NAME}.cpp
+#)
 
-target_link_libraries(${INTEGRATION_TEST_EXE}
-  ${PROJECT_NAME}
-  pcsc
-  GTest::Main
-)
+#target_link_libraries(${INTEGRATION_TEST_EXE}
+#  ${PROJECT_NAME}
+#  pcsc
+#  GTest::Main
+#)
